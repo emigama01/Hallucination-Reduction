@@ -1,0 +1,224 @@
+{
+  "baseline": {
+    "total_questions": 30,
+    "hallucinations": 20,
+    "hallucination_rate": 0.6666666666666666,
+    "accuracy_rate": 0.33333333333333337,
+    "avg_rouge_l": 0.28343610896163296,
+    "avg_factual_accuracy": 0.38825276709405093,
+    "std_rouge_l": 0.11874430855425244,
+    "std_factual_accuracy": 0.22293015587809337,
+    "by_category": {
+      "Health": {
+        "count": 7,
+        "hallucination_rate": 0.42857142857142855,
+        "avg_accuracy": 0.37248569695550104
+      },
+      "Misconceptions": {
+        "count": 6,
+        "hallucination_rate": 0.8333333333333334,
+        "avg_accuracy": 0.3628573265348259
+      },
+      "Science": {
+        "count": 8,
+        "hallucination_rate": 0.5,
+        "avg_accuracy": 0.49392547288209576
+      },
+      "Geography": {
+        "count": 4,
+        "hallucination_rate": 0.75,
+        "avg_accuracy": 0.31992134867420907
+      },
+      "History": {
+        "count": 5,
+        "hallucination_rate": 1.0,
+        "avg_accuracy": 0.3263899994340923
+      }
+    }
+  },
+  "cot": {
+    "total_questions": 30,
+    "hallucinations": 28,
+    "hallucination_rate": 0.9333333333333333,
+    "accuracy_rate": 0.06666666666666665,
+    "avg_rouge_l": 0.10186969418143535,
+    "avg_factual_accuracy": 0.34603996273562426,
+    "std_rouge_l": 0.02736786667782805,
+    "std_factual_accuracy": 0.1625726452125656,
+    "by_category": {
+      "Health": {
+        "count": 7,
+        "hallucination_rate": 0.7142857142857143,
+        "avg_accuracy": 0.39081640272434676
+      },
+      "Misconceptions": {
+        "count": 6,
+        "hallucination_rate": 1.0,
+        "avg_accuracy": 0.34008263794521154
+      },
+      "Science": {
+        "count": 8,
+        "hallucination_rate": 1.0,
+        "avg_accuracy": 0.3168091661629095
+      },
+      "Geography": {
+        "count": 4,
+        "hallucination_rate": 1.0,
+        "avg_accuracy": 0.41382277894479164
+      },
+      "History": {
+        "count": 5,
+        "hallucination_rate": 1.0,
+        "avg_accuracy": 0.28304475804891815
+      }
+    }
+  },
+  "few_shot": {
+    "total_questions": 30,
+    "hallucinations": 24,
+    "hallucination_rate": 0.8,
+    "accuracy_rate": 0.19999999999999996,
+    "avg_rouge_l": 0.15910732911668016,
+    "avg_factual_accuracy": 0.4598210488361636,
+    "std_rouge_l": 0.05025349197236794,
+    "std_factual_accuracy": 0.19151779221097423,
+    "by_category": {
+      "Health": {
+        "count": 7,
+        "hallucination_rate": 0.5714285714285714,
+        "avg_accuracy": 0.4693486180465164
+      },
+      "Misconceptions": {
+        "count": 6,
+        "hallucination_rate": 0.8333333333333334,
+        "avg_accuracy": 0.5091212891439021
+      },
+      "Science": {
+        "count": 8,
+        "hallucination_rate": 0.75,
+        "avg_accuracy": 0.4337111058051303
+      },
+      "Geography": {
+        "count": 4,
+        "hallucination_rate": 1.0,
+        "avg_accuracy": 0.518124895459566
+      },
+      "History": {
+        "count": 5,
+        "hallucination_rate": 1.0,
+        "avg_accuracy": 0.3824549951233148
+      }
+    }
+  },
+  "self_consistency": {
+    "total_questions": 30,
+    "hallucinations": 21,
+    "hallucination_rate": 0.7,
+    "accuracy_rate": 0.30000000000000004,
+    "avg_rouge_l": 0.2743096324193101,
+    "avg_factual_accuracy": 0.4481577251446639,
+    "std_rouge_l": 0.11899214068912448,
+    "std_factual_accuracy": 0.18216610879164521,
+    "by_category": {
+      "Health": {
+        "count": 7,
+        "hallucination_rate": 0.2857142857142857,
+        "avg_accuracy": 0.5191621729905819
+      },
+      "Misconceptions": {
+        "count": 6,
+        "hallucination_rate": 1.0,
+        "avg_accuracy": 0.3584548423393216
+      },
+      "Science": {
+        "count": 8,
+        "hallucination_rate": 0.5,
+        "avg_accuracy": 0.496658007290486
+      },
+      "Geography": {
+        "count": 4,
+        "hallucination_rate": 1.0,
+        "avg_accuracy": 0.3838597556810671
+      },
+      "History": {
+        "count": 5,
+        "hallucination_rate": 1.0,
+        "avg_accuracy": 0.43023288166435175
+      }
+    }
+  },
+  "rag": {
+    "total_questions": 30,
+    "hallucinations": 22,
+    "hallucination_rate": 0.7333333333333333,
+    "accuracy_rate": 0.2666666666666667,
+    "avg_rouge_l": 0.35269257356760875,
+    "avg_factual_accuracy": 0.5095767247968088,
+    "std_rouge_l": 0.15212757032190496,
+    "std_factual_accuracy": 0.26746325730912685,
+    "by_category": {
+      "Health": {
+        "count": 7,
+        "hallucination_rate": 0.2857142857142857,
+        "avg_accuracy": 0.5126344696517761
+      },
+      "Misconceptions": {
+        "count": 6,
+        "hallucination_rate": 1.0,
+        "avg_accuracy": 0.5726427840868676
+      },
+      "Science": {
+        "count": 8,
+        "hallucination_rate": 0.75,
+        "avg_accuracy": 0.4519406152981596
+      },
+      "Geography": {
+        "count": 4,
+        "hallucination_rate": 0.75,
+        "avg_accuracy": 0.7100998232634389
+      },
+      "History": {
+        "count": 5,
+        "hallucination_rate": 1.0,
+        "avg_accuracy": 0.3614159072763191
+      }
+    }
+  },
+  "rag_optimized": {
+    "total_questions": 30,
+    "hallucinations": 24,
+    "hallucination_rate": 0.8,
+    "accuracy_rate": 0.19999999999999996,
+    "avg_rouge_l": 0.1954598219501163,
+    "avg_factual_accuracy": 0.5561429196590468,
+    "std_rouge_l": 0.05510956046529126,
+    "std_factual_accuracy": 0.19288837565207984,
+    "by_category": {
+      "Health": {
+        "count": 7,
+        "hallucination_rate": 0.42857142857142855,
+        "avg_accuracy": 0.5386613474964518
+      },
+      "Misconceptions": {
+        "count": 6,
+        "hallucination_rate": 1.0,
+        "avg_accuracy": 0.6422970008627343
+      },
+      "Science": {
+        "count": 8,
+        "hallucination_rate": 0.75,
+        "avg_accuracy": 0.5091743389621429
+      },
+      "Geography": {
+        "count": 4,
+        "hallucination_rate": 1.0,
+        "avg_accuracy": 0.7115502683264645
+      },
+      "History": {
+        "count": 5,
+        "hallucination_rate": 1.0,
+        "avg_accuracy": 0.4280560734233668
+      }
+    }
+  }
+}
