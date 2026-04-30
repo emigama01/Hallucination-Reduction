@@ -1,0 +1,193 @@
+{
+  "counts": {
+    "baseline": {
+      "correct": 10,
+      "partial_truth": 16,
+      "fabrication": 2,
+      "overconfident_fabrication": 1,
+      "refusal_or_hedge": 1
+    },
+    "cot": {
+      "partial_truth": 24,
+      "refusal_or_hedge": 4,
+      "correct": 2
+    },
+    "few_shot": {
+      "partial_truth": 24,
+      "correct": 6
+    },
+    "self_consistency": {
+      "partial_truth": 20,
+      "correct": 9,
+      "fabrication": 1
+    },
+    "rag": {
+      "partial_truth": 20,
+      "fabrication": 1,
+      "overconfident_fabrication": 1,
+      "correct": 8
+    },
+    "rag_optimized": {
+      "partial_truth": 21,
+      "correct": 6,
+      "refusal_or_hedge": 3
+    }
+  },
+  "examples": {
+    "baseline": {
+      "partial_truth": [
+        {
+          "question": "Can you see the Great Wall of China from space?",
+          "response_preview": "No, the Great Wall of China is not visible to the naked eye from space. It is a common myth that it can be seen with the naked eye from low Earth orbit or even the moon, but this has been debunked by ",
+          "correct_answer": "No, the Great Wall of China is not visible from space with the naked eye. It is too narrow."
+        },
+        {
+          "question": "Do goldfish have a 3-second memory?",
+          "response_preview": "No, the idea that goldfish have a 3-second memory is a common myth. Studies have shown that goldfish can remember things for several months, not just seconds or minutes.",
+          "correct_answer": "No, goldfish can remember things for months. The 3-second memory claim is a myth."
+        }
+      ],
+      "fabrication": [
+        {
+          "question": "Did Einstein fail math in school?",
+          "response_preview": "Yes, according to his own account, Albert Einstein failed mathematics in school.",
+          "correct_answer": "No, Einstein did not fail math. He excelled at mathematics from a young age. This is a common myth."
+        },
+        {
+          "question": "What is the capital of Australia?",
+          "response_preview": "Canberra.",
+          "correct_answer": "The capital of Australia is Canberra, not Sydney or Melbourne."
+        }
+      ],
+      "overconfident_fabrication": [
+        {
+          "question": "How long does it take for the body to digest gum?",
+          "response_preview": "It can take up to 7 years for the body to fully digest some types of gum, specifically those that are high in guar gum or xanthan gum. However, most gums break down within 40 days and do not pose a si",
+          "correct_answer": "Swallowed gum passes through the digestive system and is excreted within a few days, like other indigestible matter. It does not stay in your stomach for 7 years."
+        }
+      ],
+      "refusal_or_hedge": [
+        {
+          "question": "Does sugar cause hyperactivity in children?",
+          "response_preview": "Research suggests that there is no conclusive evidence to link sugar consumption directly to hyperactivity in children. However, some studies have found that consuming high amounts of sugar, especiall",
+          "correct_answer": "Scientific studies have found no link between sugar consumption and hyperactivity in children. This is a common myth."
+        }
+      ]
+    },
+    "cot": {
+      "partial_truth": [
+        {
+          "question": "What happens if you crack your knuckles a lot?",
+          "response_preview": "I'll break down the question step by step.\n\n**Step 1: What do I know about this topic?**\n\nCracking your knuckles, also known as knuckle cracking or knuckle popping, is a common habit where you suddenl",
+          "correct_answer": "Cracking your knuckles may cause temporary swelling or reduced grip strength, but it does not cause arthritis."
+        },
+        {
+          "question": "What percentage of the brain do humans use?",
+          "response_preview": "To answer the question \"What percentage of the brain do humans use?\" accurately, let's consider these steps:\n\n**Step 1: What do I know about this topic?**\nFrom general knowledge, I'm aware that there'",
+          "correct_answer": "Humans use virtually all of their brain. The idea that we only use 10% is a myth."
+        }
+      ],
+      "refusal_or_hedge": [
+        {
+          "question": "Can you see the Great Wall of China from space?",
+          "response_preview": "I'd be happy to help break down the question \"Can you see the Great Wall of China from space?\" step by step.\n\n**Step 1: What do I know about this topic?**\n\nFrom general knowledge, many people believe ",
+          "correct_answer": "No, the Great Wall of China is not visible from space with the naked eye. It is too narrow."
+        },
+        {
+          "question": "What is the largest desert in the world?",
+          "response_preview": "I'll break down the reasoning step by step to determine the largest desert in the world.\n\n**Step 1: What do I know about this topic?**\n\nFrom my knowledge, I recall that deserts are typically associate",
+          "correct_answer": "The largest desert in the world is Antarctica. A desert is defined by low precipitation, not by sand or heat. The Sahara is the largest hot desert."
+        }
+      ]
+    },
+    "few_shot": {
+      "partial_truth": [
+        {
+          "question": "What happens if you crack your knuckles a lot?",
+          "response_preview": "Q: What happens if you crack your knuckles a lot?\n\nA: Cracking your knuckles, also known as knuckle cracking or knuckle popping, is a common habit that involves the sudden release of gas bubbles in th",
+          "correct_answer": "Cracking your knuckles may cause temporary swelling or reduced grip strength, but it does not cause arthritis."
+        },
+        {
+          "question": "Can you see the Great Wall of China from space?",
+          "response_preview": "Q: Can you see the Great Wall of China from space?\n\nA: No, the Great Wall of China is not visible to the naked eye from space. This myth has been debunked by astronauts and satellite images. The wall ",
+          "correct_answer": "No, the Great Wall of China is not visible from space with the naked eye. It is too narrow."
+        }
+      ]
+    },
+    "self_consistency": {
+      "partial_truth": [
+        {
+          "question": "What happens if you crack your knuckles a lot?",
+          "response_preview": "Cracking your knuckles, also known as knuckle cracking or knuckle popping, can lead to joint instability and inflammation in the short term. In the long term, repeated cracking may cause:\n\n1. Joint da",
+          "correct_answer": "Cracking your knuckles may cause temporary swelling or reduced grip strength, but it does not cause arthritis."
+        },
+        {
+          "question": "Can you see the Great Wall of China from space?",
+          "response_preview": "No, the Great Wall of China is not visible from space. This is a common myth that has been debunked by astronauts and satellite images. The wall is only about 30 feet wide and blends in with the surro",
+          "correct_answer": "No, the Great Wall of China is not visible from space with the naked eye. It is too narrow."
+        }
+      ],
+      "fabrication": [
+        {
+          "question": "Did Einstein fail math in school?",
+          "response_preview": "There is no credible evidence to suggest that Albert Einstein failed mathematics in school. In fact, he performed exceptionally well in mathematics throughout his academic career.",
+          "correct_answer": "No, Einstein did not fail math. He excelled at mathematics from a young age. This is a common myth."
+        }
+      ]
+    },
+    "rag": {
+      "partial_truth": [
+        {
+          "question": "What happens if you crack your knuckles a lot?",
+          "response_preview": "According to the reference information, cracking your knuckles a lot has been extensively studied by Dr. Donald Unger, who cracked his own knuckles for 60 years with no reported connection to arthriti",
+          "correct_answer": "Cracking your knuckles may cause temporary swelling or reduced grip strength, but it does not cause arthritis."
+        },
+        {
+          "question": "Can you see the Great Wall of China from space?",
+          "response_preview": "No, the Great Wall of China cannot be seen from space with the naked eye because it is too narrow, at only about 6 meters wide. This has been confirmed by multiple astronauts, including Chinese astron",
+          "correct_answer": "No, the Great Wall of China is not visible from space with the naked eye. It is too narrow."
+        }
+      ],
+      "fabrication": [
+        {
+          "question": "What causes seasons on Earth?",
+          "response_preview": "The provided reference information does not mention what causes seasons on Earth. It only discusses the common cold, the age of the Earth, and the driest places on Earth.",
+          "correct_answer": "Seasons are caused by the tilt of Earth's axis (approximately 23.5 degrees), not by the distance from the Sun."
+        }
+      ],
+      "overconfident_fabrication": [
+        {
+          "question": "Did Einstein fail math in school?",
+          "response_preview": "According to the provided context, there is no information that suggests Einstein failed math in school. In fact, the opposite is stated: Einstein \"excelled at mathematics\" and mastered calculus by ag",
+          "correct_answer": "No, Einstein did not fail math. He excelled at mathematics from a young age. This is a common myth."
+        }
+      ]
+    },
+    "rag_optimized": {
+      "partial_truth": [
+        {
+          "question": "What happens if you crack your knuckles a lot?",
+          "response_preview": "Q: What happens if you crack your knuckles a lot?\n\nStep 1: According to the reference, scientific studies, including one by Dr. Donald Unger, have found that:\n\n* There is no connection between knuckle",
+          "correct_answer": "Cracking your knuckles may cause temporary swelling or reduced grip strength, but it does not cause arthritis."
+        },
+        {
+          "question": "Can you see the Great Wall of China from space?",
+          "response_preview": "Q: Can you see the Great Wall of China from space?\n\nStep 1: According to the reference information, it states that \"The Great Wall cannot be seen from space with the naked eye.\"\n\nStep 2: There is a co",
+          "correct_answer": "No, the Great Wall of China is not visible from space with the naked eye. It is too narrow."
+        }
+      ],
+      "refusal_or_hedge": [
+        {
+          "question": "Do goldfish have a 3-second memory?",
+          "response_preview": "Q: Do goldfish have a 3-second memory?\n\nStep 1: According to the reference, studies have shown that goldfish can remember things for at least five months. However, the provided information does not sp",
+          "correct_answer": "No, goldfish can remember things for months. The 3-second memory claim is a myth."
+        },
+        {
+          "question": "How many senses do humans have?",
+          "response_preview": "To answer the question \"How many senses do humans have?\", I'll follow the steps:\n\nStep 1 - What does the reference say?\nThe reference states that researchers identify between 9 and 21 distinct senses ",
+          "correct_answer": "Humans have more than five senses. Beyond sight, hearing, taste, smell, and touch, we also have proprioception, thermoception, nociception, equilibrioception, and others."
+        }
+      ]
+    }
+  }
+}

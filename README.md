@@ -105,12 +105,53 @@ The dataset consists of **30 questions** inspired by the [TruthfulQA](https://gi
 3. **Self-Consistency is the most practical prompt-only technique** — no special resources needed, just run the query multiple times
 4. **Evaluation metric choice matters** — ROUGE-L penalizes verbose but factually correct answers; custom metrics that focus on key facts give a more accurate picture
 
+## Statistical Analysis (Final Phase)
+
+For the final report we add bootstrap-based statistics over the existing 30-question evaluation:
+
+- **Bootstrap 95% confidence intervals** (10,000 resamples) for factual accuracy, hallucination rate, and ROUGE-L per method.
+- **Paired bootstrap test** of each method against the baseline (per-question Δ).
+
+Headline paired comparisons (Δ factual accuracy vs baseline):
+
+| Method | Δ vs Baseline | 95% CI | p-value |
+|--------|:-------------:|:------:|:-------:|
+| RAG + Optimized | **+0.168** | [+0.064, +0.270] | **0.001** |
+| RAG | +0.121 | [+0.010, +0.228] | 0.031 |
+| Self-Consistency | +0.060 | [+0.005, +0.119] | 0.034 |
+| Few-Shot | +0.072 | [-0.017, +0.157] | 0.125 (n.s.) |
+| Chain-of-Thought | -0.042 | [-0.132, +0.043] | 0.340 (n.s.) |
+
+![Accuracy with CIs](results/accuracy_with_ci.png)
+![Paired diffs](results/paired_diffs.png)
+
+## Error Analysis (Final Phase)
+
+Each non-correct response is categorized into one of four types using a lightweight heuristic:
+**partial-truth**, **fabrication**, **overconfident-fabrication**, and **refusal-or-hedge**.
+
+![Error Types](results/error_types.png)
+
+The dominant residual failure mode across all methods is **partial-truth**: the model surfaces related vocabulary but fails to commit to the verified fact. RAG and RAG + Optimized do not fully eliminate fabrication, motivating future work on factual-entailment verification.
+
 ## Limitations
 
-- Small dataset (30 questions) — not comprehensive
-- Single model size tested (3B parameters)
-- RAG knowledge base was specifically built to contain answers (optimistic scenario)
-- Automated metrics only — no human evaluation
+- Small dataset (30 questions) — not comprehensive (bootstrap confirms RAG+Optimized gain is significant, but broader claims need full TruthfulQA evaluation).
+- Single model size tested (3B parameters).
+- RAG knowledge base was specifically built to contain answers (optimistic scenario).
+- Automated metrics only — no human evaluation.
+
+## Final Deliverables
+
+| Deliverable | File |
+|-------------|------|
+| Final IEEE Report (Word) | `AI700-Final-Report-Hallucination-LLM.docx` |
+| Final IEEE Report (PDF)  | `AI700-Final-Report-Hallucination-LLM.pdf` |
+| Final Presentation       | `AI700-Final-PPT-Hallucination-LLM.pptx` |
+| Dataset                  | `data/truthfulqa_subset.csv` |
+| Raw experiment data      | `results/experiment_results.csv` |
+| Statistics + CIs         | `results/stats_summary.json` |
+| Error categorization     | `results/error_analysis.json` |
 
 ## Project Structure
 
@@ -118,19 +159,29 @@ The dataset consists of **30 questions** inspired by the [TruthfulQA](https://gi
 ├── data/
 │   └── truthfulqa_subset.csv   # 30-question dataset (TruthfulQA-inspired)
 ├── src/
-│   ├── experiment.py           # Main experiment pipeline
-│   ├── truthfulqa_data.py      # TruthfulQA dataset + RAG knowledge base
-│   ├── visualize.py            # Result visualization scripts
-│   ├── generate_ieee_paper.py  # IEEE paper generation
-│   └── generate_ppt.py         # Presentation generation
+│   ├── experiment.py           # Main experiment pipeline (LLaMA 3.2 + Ollama)
+│   ├── truthfulqa_data.py      # Dataset + RAG knowledge base
+│   ├── visualize.py            # Midterm visualization scripts
+│   ├── visualize_final.py      # Final-phase charts (CIs, error types, paired diffs)
+│   ├── stats_analysis.py       # Bootstrap CIs + paired tests + error categorization
+│   ├── fill_final_report.py    # Fill IEEE Word template with report content
+│   └── fill_final_ppt.py       # Fill final PPT template
 ├── results/
 │   ├── experiment_results.csv  # Raw experimental data
-│   ├── summary.json            # Aggregated results
-│   ├── accuracy_comparison.png # Accuracy bar chart
+│   ├── summary.json            # Midterm aggregated results
+│   ├── stats_summary.json      # Bootstrap CIs + paired bootstrap p-values
+│   ├── error_analysis.json     # Error-type counts + examples per method
+│   ├── accuracy_with_ci.png    # Accuracy with 95% CI error bars
+│   ├── paired_diffs.png        # Δ accuracy vs baseline + significance
+│   ├── error_types.png         # Stacked bar of response types
+│   ├── accuracy_comparison.png # Original accuracy chart
 │   ├── hallucination_rates.png # Hallucination rate comparison
-│   ├── category_heatmap.png    # Per-category performance heatmap
-│   ├── radar_comparison.png    # Multi-metric radar chart
-│   └── reduction_waterfall.png # Improvement waterfall chart
+│   ├── category_heatmap.png    # Per-category heatmap
+│   ├── radar_comparison.png    # Multi-metric radar
+│   └── reduction_waterfall.png # Improvement waterfall
+├── AI700-Final-Report-Hallucination-LLM.docx
+├── AI700-Final-Report-Hallucination-LLM.pdf
+├── AI700-Final-PPT-Hallucination-LLM.pptx
 └── README.md
 ```
 

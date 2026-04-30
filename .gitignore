@@ -1,4 +1,6 @@
 .DS_Store
-*.docx
-*.pptx
-*.pdf
+
+# Ignore template files and intermediate working copies
+AI700-001-IEEE-conference-template-letter-Final.docx
+AI700-001_BK_SPRG2026-PPT-Template-Final.pptx
+AI700-IEEE-template-clean.docx
